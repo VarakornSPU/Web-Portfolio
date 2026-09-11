@@ -52,6 +52,7 @@ const PROJECTS = [
     solution: "A full-stack e-commerce app covering product management, shopping cart, order management, payment workflow and shipping status.",
     role: "Built the application end to end: schema design, REST API, and the storefront UI.",
     outcome: "Shipped user authentication with Google OAuth, a documented REST API (Swagger), and PostgreSQL-backed data — a complete order lifecycle.",
+    sourceUrl: "https://github.com/VarakornSPU/Petshop-Project-CSI400",
     featured: true,
   },
   {
@@ -63,6 +64,7 @@ const PROJECTS = [
     solution: "An AI-powered chatbot with authentication, persistent chat history and conversation memory, backed by Retrieval-Augmented Generation.",
     role: "Designed the retrieval layer: the system pulls relevant passages from a knowledge base and feeds them to the model as context.",
     outcome: "A chatbot that answers with context grounded in curated source material instead of the model's own unguided output.",
+    sourceUrl: "https://github.com/VarakornSPU/Mindi",
     featured: true,
   },
   {
@@ -74,6 +76,7 @@ const PROJECTS = [
     solution: "An online shoe-store web app structured with ASP.NET Core MVC — Models, Controllers, Views and ViewComponents.",
     role: "Implemented the MVC architecture and the data layer.",
     outcome: "Database operations wired through Entity Framework Core against SQL Server, with a clean separation between data, logic and presentation.",
+    sourceUrl: "https://github.com/VarakornSPU/Stepify",
     featured: false,
   },
 ];
@@ -682,6 +685,29 @@ export default function Portfolio() {
           gap: 0.5rem;
         }
 
+        .pf-project-source {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: fit-content;
+          margin-top: 1.5rem;
+          padding: 0.65rem 0.9rem;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          color: var(--text-main);
+          background: var(--bg);
+          font-size: 0.82rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        .pf-project-source:hover {
+          color: var(--accent);
+          border-color: var(--accent);
+          background: var(--chip-bg);
+        }
+
         .pf-tech-chip {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.75rem;
@@ -1060,6 +1086,14 @@ export default function Portfolio() {
                       <span key={t} className="pf-tech-chip">{t}</span>
                     ))}
                   </div>
+                  <a
+                    className="pf-project-source"
+                    href={p.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub size={16} /> Source Code <ExternalLink size={14} />
+                  </a>
                 </div>
                 <div className="pf-project-body">
                   <dl>
